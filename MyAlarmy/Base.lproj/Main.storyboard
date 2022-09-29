@@ -195,12 +195,26 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHZ-k0-swe">
+                                <rect key="frame" x="305" y="671" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="clG-M5-OmS"/>
+                                    <constraint firstAttribute="height" constant="70" id="pRG-Zk-bd9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system"/>
+                                <connections>
+                                    <action selector="floatingButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YMN-j3-1qX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.75490558920359141" green="0.787339877170396" blue="0.90152372434885819" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qNa-7d-KvN" secondAttribute="trailing" constant="15" id="4rt-v2-zo0"/>
+                            <constraint firstItem="PHZ-k0-swe" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-20" id="AzV-bK-Bke"/>
                             <constraint firstItem="sSG-pz-KmL" firstAttribute="top" secondItem="QTC-hW-pKF" secondAttribute="bottom" constant="8" symbolic="YES" id="CPM-tb-ODL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PHZ-k0-swe" secondAttribute="trailing" constant="15" id="Kbv-q7-Yyl"/>
                             <constraint firstItem="qNa-7d-KvN" firstAttribute="leading" secondItem="QTC-hW-pKF" secondAttribute="trailing" constant="10" id="Wi1-cP-Wro"/>
                             <constraint firstItem="sSG-pz-KmL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="cjo-sz-BWp"/>
                             <constraint firstItem="qNa-7d-KvN" firstAttribute="centerY" secondItem="QTC-hW-pKF" secondAttribute="centerY" id="jug-1m-cp9"/>
@@ -213,6 +227,7 @@
                     <navigationItem key="navigationItem" id="eGu-hb-wul"/>
                     <connections>
                         <outlet property="collectionView" destination="sSG-pz-KmL" id="M3c-bW-TlS"/>
+                        <outlet property="floatingButton" destination="PHZ-k0-swe" id="IaA-1v-iaq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -348,6 +363,7 @@
         <image name="doc.plaintext" catalog="system" width="115" height="128"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="moon.stars" catalog="system" width="125" height="128"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="power.circle.fill" catalog="system" width="128" height="123"/>
         <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
         <image name="sun.min" catalog="system" width="128" height="123"/>

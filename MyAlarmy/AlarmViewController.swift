@@ -10,6 +10,7 @@ import UIKit
 class AlarmViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var floatingButton: UIButton!
     
     let list: [Alarm] = Alarm.list
     
@@ -46,6 +47,10 @@ class AlarmViewController: UIViewController {
         self.navigationItem.title = "9시간 20분 후에 울림"
         self.navigationItem.titleView?.backgroundColor = .white
 //        self.navigationItem.titleView = titleView()
+        
+        floatingButton.layer.cornerRadius = 35
+        floatingButton.clipsToBounds = true
+        floatingButton.tintColor = .systemPink
         
     }
     
@@ -87,6 +92,12 @@ class AlarmViewController: UIViewController {
         return stackView
     }
     
-
+    @IBAction func floatingButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "NewAlarm", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "NewAlarmViewController") as! NewAlarmViewController
+//        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
 
 }
