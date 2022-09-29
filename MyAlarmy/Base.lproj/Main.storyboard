@@ -18,8 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QTC-hW-pKF">
+                                <rect key="frame" x="279" y="144" width="35" height="38.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="IVy-4m-ddv"/>
+                                    <constraint firstAttribute="width" constant="35" id="x8E-nr-clY"/>
+                                </constraints>
+                                <imageReference key="image" image="sun.min" catalog="system" symbolScale="default" renderingMode="hierarchical">
+                                    <hierarchicalColors>
+                                        <color systemColor="systemYellowColor"/>
+                                        <color systemColor="secondaryLabelColor"/>
+                                        <color systemColor="tertiaryLabelColor"/>
+                                    </hierarchicalColors>
+                                </imageReference>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNa-7d-KvN">
+                                <rect key="frame" x="324" y="149.33333333333334" width="51" height="27.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="0.59778559602649006" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sSG-pz-KmL">
-                                <rect key="frame" x="15" y="91" width="360" height="670"/>
+                                <rect key="frame" x="15" y="191" width="360" height="570"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="w0H-is-k5o">
                                     <size key="itemSize" width="360" height="170"/>
@@ -33,7 +53,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vdR-Fv-wfb">
                                             <rect key="frame" x="0.0" y="0.0" width="360" height="170"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wig-bl-emb">
                                                     <rect key="frame" x="0.0" y="0.0" width="360" height="170"/>
@@ -179,10 +199,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.75490558920359141" green="0.787339877170396" blue="0.90152372434885819" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sSG-pz-KmL" secondAttribute="trailing" constant="15" id="KRp-ce-24k"/>
-                            <constraint firstItem="sSG-pz-KmL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="UVD-Il-vrJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sSG-pz-KmL" secondAttribute="bottom" id="mEU-sF-gSf"/>
-                            <constraint firstItem="sSG-pz-KmL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mEg-0v-jij"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qNa-7d-KvN" secondAttribute="trailing" constant="15" id="4rt-v2-zo0"/>
+                            <constraint firstItem="sSG-pz-KmL" firstAttribute="top" secondItem="QTC-hW-pKF" secondAttribute="bottom" constant="8" symbolic="YES" id="CPM-tb-ODL"/>
+                            <constraint firstItem="qNa-7d-KvN" firstAttribute="leading" secondItem="QTC-hW-pKF" secondAttribute="trailing" constant="10" id="Wi1-cP-Wro"/>
+                            <constraint firstItem="sSG-pz-KmL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="cjo-sz-BWp"/>
+                            <constraint firstItem="qNa-7d-KvN" firstAttribute="centerY" secondItem="QTC-hW-pKF" secondAttribute="centerY" id="jug-1m-cp9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sSG-pz-KmL" secondAttribute="trailing" constant="15" id="l3r-If-CYd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sSG-pz-KmL" secondAttribute="bottom" id="qfD-dk-GWH"/>
+                            <constraint firstItem="qNa-7d-KvN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="315" id="thb-WV-I74"/>
+                            <constraint firstItem="QTC-hW-pKF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uZ2-Jz-1TZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eGu-hb-wul"/>
@@ -298,6 +323,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.75490558919999995" green="0.78733987719999998" blue="0.90152372430000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.82655092139999997" green="0.86329145439999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -318,6 +350,10 @@
         <image name="moon.stars" catalog="system" width="125" height="128"/>
         <image name="power.circle.fill" catalog="system" width="128" height="123"/>
         <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
+        <image name="sun.min" catalog="system" width="128" height="123"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -329,6 +365,12 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -43,7 +43,8 @@ class AlarmViewController: UIViewController {
         
         collectionView.collectionViewLayout = layout()
         
-        self.navigationItem.title = "다음 알림: 9시간 20분 후"
+        self.navigationItem.title = "9시간 20분 후에 울림"
+        self.navigationItem.titleView?.backgroundColor = .white
 //        self.navigationItem.titleView = titleView()
         
     }
