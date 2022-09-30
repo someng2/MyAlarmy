@@ -95,7 +95,7 @@ class AlarmViewController: UIViewController {
     @IBAction func floatingButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "NewAlarm", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "NewAlarmViewController") as! NewAlarmViewController
-//        vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
     
