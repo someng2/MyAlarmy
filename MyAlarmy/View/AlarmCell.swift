@@ -13,8 +13,18 @@ class AlarmCell: UICollectionViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     
     func configure(_ alarm: Alarm) {
-        self.ampmLabel.text = alarm.ampm
-        self.timeLabel.text = alarm.time
+ 
+        let arr = alarm.time.split(separator: ":")
+        let hour = Int(arr[0])!
+        if hour > 12 {
+            self.ampmLabel.text = "오후"
+            print("before: \(alarm.time)")
+            self.timeLabel.text = "\(hour-12):\(arr[1])"
+        }
+        else {
+            self.ampmLabel.text = "오전"
+            self.timeLabel.text = alarm.time
+        }
     }
     
     override func awakeFromNib() {

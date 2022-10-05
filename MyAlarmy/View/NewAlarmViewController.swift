@@ -16,17 +16,16 @@ class NewAlarmViewController: UIViewController {
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var addMissonButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.addMissonButton.layer.cornerRadius = 10
         self.addMissonButton.layer.borderWidth = 1
         self.addMissonButton.layer.borderColor = UIColor.opaqueSeparator.cgColor
+        
         let now = Date()
-        var nextAlarm = Calendar.current.date(byAdding: .minute, value: 1, to: now)!
+        let nextAlarm = Calendar.current.date(byAdding: .minute, value: 1, to: now)!
         self.datePicker.setDate(nextAlarm, animated: true)
-
+        
         self.timeDifLabel.text = "1분"
     }
     
