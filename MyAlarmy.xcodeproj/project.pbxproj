@@ -26,6 +26,7 @@
 		3D6A950128E4374500B3E72F /* AlarmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A950028E4374500B3E72F /* AlarmData.swift */; };
 		3DA548C928E5F5C400CD8A1B /* NewAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA548C828E5F5C400CD8A1B /* NewAlarmViewController.swift */; };
 		3DA548CB28E5F5EF00CD8A1B /* NewAlarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA548CA28E5F5EF00CD8A1B /* NewAlarm.storyboard */; };
+		3DD0C2DE28EDE95400E0B6AD /* NewAlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD0C2DD28EDE95400E0B6AD /* NewAlarmViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		3D6A950028E4374500B3E72F /* AlarmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmData.swift; sourceTree = "<group>"; };
 		3DA548C828E5F5C400CD8A1B /* NewAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarmViewController.swift; sourceTree = "<group>"; };
 		3DA548CA28E5F5EF00CD8A1B /* NewAlarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewAlarm.storyboard; sourceTree = "<group>"; };
+		3DD0C2DD28EDE95400E0B6AD /* NewAlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarmViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				3D3DEBB128EC0B05008ABEF0 /* AlarmViewModel.swift */,
 				3D3DEBBB28EC17CD008ABEF0 /* AlarmDetailViewModel.swift */,
+				3DD0C2DD28EDE95400E0B6AD /* NewAlarmViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				3D3DEBAD28EC08D8008ABEF0 /* Storage.swift in Sources */,
 				3D6A94FD28E42BA200B3E72F /* AlarmViewController.swift in Sources */,
 				3D6A94CB28E428C600B3E72F /* AppDelegate.swift in Sources */,
+				3DD0C2DE28EDE95400E0B6AD /* NewAlarmViewModel.swift in Sources */,
 				3D3DEBB228EC0B05008ABEF0 /* AlarmViewModel.swift in Sources */,
 				3DA548C928E5F5C400CD8A1B /* NewAlarmViewController.swift in Sources */,
 				3D3DEBBC28EC17CD008ABEF0 /* AlarmDetailViewModel.swift in Sources */,

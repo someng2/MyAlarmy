@@ -18,7 +18,6 @@ class AlarmCell: UICollectionViewCell {
         let hour = Int(arr[0])!
         if hour > 12 {
             self.ampmLabel.text = "오후"
-            print("before: \(alarm.time)")
             self.timeLabel.text = "\(hour-12):\(arr[1])"
         }
         else {

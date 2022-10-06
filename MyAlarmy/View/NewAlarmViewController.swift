@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class NewAlarmViewController: UIViewController {
 
@@ -16,8 +17,22 @@ class NewAlarmViewController: UIViewController {
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var addMissonButton: UIButton!
     
+    @Published var vm: AlarmViewModel!
+//    var newVM: NewAlarmViewModel!
+    var subscriptions = Set<AnyCancellable>()
+    
+    var alarm: Alarm = Alarm(time: "")
+    
+    typealias Item = Alarm
+    enum Section {
+        case main
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        vm = AlarmViewModel(storage: AlarmStorage())
+        vm.fetch()
+        
         self.addMissonButton.layer.cornerRadius = 10
         self.addMissonButton.layer.borderWidth = 1
         self.addMissonButton.layer.borderColor = UIColor.opaqueSeparator.cgColor
@@ -29,8 +44,28 @@ class NewAlarmViewController: UIViewController {
         self.timeDifLabel.text = "1분"
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: NSNotification.Name("ModalDismissNC"), object: nil, userInfo: nil)
+    }
+    
     @IBAction func cancelButtonTapped(_ sender: Any) {
         self.dismiss(animated: true)
+    }
+    
+    @IBAction func compeleteButtonTapped(_ sender: Any) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        let newTime = formatter.string(from: self.datePicker.date)
+        print("new Time >>> \(newTime)")
+        alarm.time = newTime
+        
+        vm.addNewAlarm(newAlarm: alarm)
+        vm.fetch()
+        
+        self.dismiss(animated: true)
+
+        
     }
     
     @IBAction func datePickerChanged(_ sender: Any) {

@@ -21,17 +21,31 @@ class AlarmViewController: UIViewController {
     }
     
     var subscriptions = Set<AnyCancellable>()
-    var viewModel: AlarmViewModel!
+    @Published var viewModel: AlarmViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = AlarmViewModel(alarms: Alarm.list)
-//        viewModel.fetch()
+        viewModel = AlarmViewModel(storage: AlarmStorage())
+        
         configureCollectionView()
         bind()
         configureUI()
-
+        viewModel.fetch()
+        
+        NotificationCenter.default.addObserver(
+                  self,
+                  selector: #selector(self.didDismissDetailNotification(_:)),
+                  name: NSNotification.Name("ModalDismissNC"),
+                  object: nil
+              )
     }
+    
+    @objc func didDismissDetailNotification(_ notification: Notification) {
+          DispatchQueue.main.async {
+              self.viewModel.fetch()
+//              self.collectionView.reloadData()
+          }
+      }
     
     private func configureUI() {
         self.navigationItem.title = "9시간 20분 후에 울림"
@@ -43,12 +57,13 @@ class AlarmViewController: UIViewController {
         floatingButton.tintColor = .systemPink
     }
     
-    private func bind() {
-        viewModel.alarms
+    func bind() {
+        viewModel.$alarms
             .receive(on: RunLoop.main)
-            .sink { [unowned self] list in
+            .sink { list in
                 let new = list.sorted(by: {$0.time < $1.time})
                 self.applySectionItems(new)
+                print("---> [AlarmViewController] update list >>> \(new)")
             }.store(in: &subscriptions)
         
         viewModel.selectedAlarm
@@ -129,7 +144,6 @@ class AlarmViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }
-    
 
 }
 

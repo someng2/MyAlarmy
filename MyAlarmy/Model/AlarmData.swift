@@ -9,31 +9,28 @@ import Foundation
 
 struct Alarm: Hashable, Codable {
     var id: UUID = UUID()
-    let time: String
+    var time: String
 }
 
 extension Alarm {
-    private var dateComponent: DateComponents {
-        let calendar = Calendar(identifier: .gregorian)
-        let formatter = DateFormatter()
-        formatter.dateFormat = "hh:mm"
-        
-        let date = formatter.date(from: self.time) ?? Date()
-        let dc = calendar.dateComponents([.hour, .minute], from: date)
-        return dc
-    }
-    
-    var monthlyIdentifier: String {
-        return "\(dateComponent.hour!)-\(dateComponent.minute!)"
-    }
-}
-
-extension Alarm {
-    static let list = [
-        Alarm(time: "09:00"),
+    static var list = [
+//        Alarm(time: "09:00"),
         Alarm(time: "19:40"),
         Alarm( time: "11:00"),
         Alarm(time: "18:00"),
         Alarm(time: "09:30"),
     ]
 }
+
+func save(_ alarms: [Alarm]) {
+    let alarm = alarms.map { try? JSONEncoder().encode($0) }
+    UserDefaults.standard.set(alarm, forKey: "alarmData")
+}
+
+//func load() -> [Alarm] {
+//    guard let encodedData = UserDefaults.standard.array(forKey: "alarmData") as? [Alarm] else {
+//        return []
+//    }
+//
+//    return encodedData.map { try! JSONDecoder().decode(Alarm.self, from: $0) }
+//}

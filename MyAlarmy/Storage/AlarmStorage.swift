@@ -9,8 +9,8 @@ import Foundation
 
 public class AlarmStorage {
     
-    func persist(_ items: [Alarm]) {
-        Storage.store(items, to: .documents, as: "alarm_list.json")
+    func persist(_ alarms: [Alarm]) {
+        Storage.store(alarms, to: .documents, as: "alarm_list.json")
     }
     
     func fetch() -> [Alarm] {
