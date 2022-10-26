@@ -1,4 +1,5 @@
-### UICollectionView와 Combine, MVVM 공부를 목적으로 평소 애용하는 '알라미' 앱 UI를 비슷하게 만들어 보았습니다 👩🏻‍💻
+### UICollectionView와 Combine, MVVM 공부를 목적으로
+### 평소 애용하는 '알라미' 앱 UI를 비슷하게 만들어 보았습니다 👩🏻‍💻
 
 
 #### 🎈 UICollectionView 을 구성하기 위해 사용된 방법
